@@ -1,0 +1,6 @@
+There were 5 failures:
+1) test_IHMFahrenheit_ZéroAbsolu(question3): est-ce le zéro absolu en sortie ?
+2) test_IHMFahrenheit_convertir(question3): exception inattendue ! java.lang.NumberFormatException
+3) test_IHMFahrenheit_convertir_112(question3): exception ! java.lang.NumberFormatException
+4) test_IHMFahrenheit_convertir_bis(question3): exception ! java.lang.NumberFormatException
+5) test_IHMFahrenheit_convertir_120(question3): exception ! java.lang.NumberFormatException

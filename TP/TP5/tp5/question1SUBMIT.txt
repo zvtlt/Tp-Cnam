@@ -1,0 +1,44 @@
+M./Mme zanvit , en NFP121 au tp5q1, tentative du 13-11-21 à 20:44
+  Résultat : 9 échecs , aux 58 tests1 référents
+
+There were 9 failures: 
+1) test_Ensemble_de_String(question1): expected:<false> but was:<true> 
+//2) test_Ensemble_Unicité(question1): add, lorsque l''élément est déjà présent ??? 
+3) test_Ensemble_DiffSym(question1) failed
+//4) test_Ensemble_add_null(question1): add retourne true, null déjà présent ??? ... expected:<false> but was:<true> 
+5) test_Ensemble_Union(question1) failed
+6) test_Ensemble_Unicité(question1): add, lorsque l''élément est déjà présent ??? 
+7) test_Ensemble_D_Elements_Quelconques(question1): add, lorsque l''élément est déjà présent ???
+8) test_appels_dans_union(question1): Au moins une allocation (appel de new) n''est pas nécessaire ??? 
+9) test_contains_dans_add(question1): L''appel à this.contains est préféré... 
+
+(1/6)2 
+
+
+M./Mme zanvit , en NFP121 au tp5q1, tentative du 13-11-21 à 21:08
+  Résultat : 12 échecs , aux 58 tests1 référents
+
+There were 12 failures: 
+1) test_Ensemble_de_String(question1): expected:<true> but was:<false> 
+2) test_Ensemble_add_null(question1): exception inattendue ! java.lang.NullPointerException 
+3) test_Ensemble_add_null(question1): exception inattendue ! java.lang.NullPointerException 
+4) test_IHMTestEnsemble_inter_ter(question1): [2 3 4 5] inter [2 3 4 5] # [2 3 4 5] ??, obtenu:([]) 
+5) test_IHMTestEnsemble_diff(question1): [2 3 4 5] diff [4 5 6 7] # [2 3] ??, obtenu:([]) 
+6) test_IHMTestEnsemble_diff_bis(question1): [2 3] diff [4 5 6 7] # [2 3] ??, obtenu:([]) 
+7) test_IHMTestEnsemble_diffSym_bis(question1): [2 3] diffSym [6 7] # [2 3 6 7] ??, obtenu:([]) 
+8) test_IHMTestEnsemble_union(question1): [2 3 4 5] union [4 5 6 7] # [2 3 4 5 6 7] ??, obtenu:([]) 
+9) test_IHMTestEnsemble_diffSym(question1): [2 3 4 5] diffSym [4 5 6 7] # [2 3 6 7] ??, obtenu:([]) 
+10) test_IHMTestEnsemble_union_bis(question1): [2 3] union [4 5 6 7] # [2 3 4 5 6 7] ??, obtenu:([]) 
+11) test_IHMTestEnsemble_union_ter(question1): [2] union [2] # [2] ??, obtenu:([]) 
+12) test_IHMTestEnsemble_inter(question1): [2 3 4 5] inter [4 5 6 7] # [4 5] ??, obtenu:([]) 
+
+(2/6)2 , l'historique3 de vos résultats4 9. 
+
+
+Résultat : 2 échecs , aux 58 tests1 référents
+
+There were 2 failures: 
+1) test_Ensemble_add_null(question1): exception inattendue ! java.lang.NullPointerException 
+2) test_Ensemble_add_null(question1): exception inattendue ! java.lang.NullPointerException 
+
+(3/6)2 , l'historique3 de vos résultats4 12 9. 

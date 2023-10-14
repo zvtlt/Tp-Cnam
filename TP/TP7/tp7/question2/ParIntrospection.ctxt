@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=ParIntrospection
+comment1.params=observable\ observer
+comment1.target=void\ lierObservableEtObserver(java.lang.Object,\ java.lang.Object)
+comment2.params=observable\ observer
+comment2.target=void\ delierObservableEtObserver(java.lang.Object,\ java.lang.Object)
+comment3.params=source\ listener
+comment3.target=void\ lierSourceEtListener(java.lang.Object,\ java.lang.Object)
+comment4.params=source\ listener
+comment4.target=void\ delierSourceEtListener(java.lang.Object,\ java.lang.Object)
+comment4.text=\ Cette\ methode\ permet\ de\ delier\ par\ introspection,\ une\ source\ et\ un\ "listener"<p>\r\n\ Appel\ par\ introspection\ de\ la\ methode\ source.removeXXXXListener(listener)\ \r\n\ \r\n\ @param\ source\ est\ une\ instance\ \r\n\ @param\ listener\ une\ implementation\ d'une\ interface\ XXXXListener\r\n\ @throws\ NoSuchElementException\ en\ cas\ d'erreur\r\n
+numComments=5

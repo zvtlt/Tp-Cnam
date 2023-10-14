@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Client
+comment1.params=proxy
+comment1.target=void\ setProxy(Proxy)
+comment2.params=
+comment2.target=java.lang.String\ executer()
+numComments=3

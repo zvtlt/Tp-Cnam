@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=TestAST
+comment1.params=a\ b
+comment1.target=int\ mult1(int,\ int)
+comment2.params=n1\ n2
+comment2.target=int\ mult2(int,\ int)
+comment3.params=n
+comment3.target=int\ som_w(int)
+comment4.params=n
+comment4.target=int\ som_f(int)
+comment5.params=
+comment5.target=void\ testMult1()
+comment6.params=
+comment6.target=void\ testMult2()
+comment7.params=
+comment7.target=void\ testSomW()
+comment8.params=
+comment8.target=void\ testSomF()
+numComments=9

@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=VisiteurBoolJDOM
+comment1.params=ve
+comment1.target=VisiteurBoolJDOM(tp6.question1.VisiteurExpression)
+comment2.params=v
+comment2.target=org.jdom.Element\ visite(Vrai)
+comment3.params=f
+comment3.target=org.jdom.Element\ visite(Faux)
+comment4.params=n
+comment4.target=org.jdom.Element\ visite(Non)
+comment5.params=o
+comment5.target=org.jdom.Element\ visite(Ou)
+comment6.params=e
+comment6.target=org.jdom.Element\ visite(Et)
+comment7.params=s
+comment7.target=org.jdom.Element\ visite(Sup)
+comment8.params=e
+comment8.target=org.jdom.Element\ visite(Egal)
+comment9.params=i
+comment9.target=org.jdom.Element\ visite(Inf)
+numComments=10

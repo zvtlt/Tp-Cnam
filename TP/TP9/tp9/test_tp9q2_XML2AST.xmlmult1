@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<programme>
+  <Sequence>
+    <Affectation>
+      <Variable>produit</Variable>
+      <Constante>0</Constante>
+    </Affectation>
+    <Sequence>
+      <TantQue>
+        <Sup>
+          <Variable>b</Variable>
+          <Constante>0</Constante>
+        </Sup>
+        <Sequence>
+          <Affectation>
+            <Variable>produit</Variable>
+            <Addition>
+              <Variable>produit</Variable>
+              <Variable>a</Variable>
+            </Addition>
+          </Affectation>
+          <Affectation>
+            <Variable>b</Variable>
+            <Soustraction>
+              <Variable>b</Variable>
+              <Constante>1</Constante>
+            </Soustraction>
+          </Affectation>
+        </Sequence>
+      </TantQue>
+      <Afficher>
+        <Variable>produit</Variable>
+      </Afficher>
+    </Sequence>
+  </Sequence>
+</programme>
+

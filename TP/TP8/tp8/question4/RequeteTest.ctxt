@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=RequeteTest
+comment1.params=
+comment1.target=void\ setUp()
+comment2.params=
+comment2.target=void\ testCreationRequete1()
+comment3.params=
+comment3.target=void\ testCreationRequete2()
+comment4.params=
+comment4.target=void\ testCreationRequete3()
+comment5.params=
+comment5.target=void\ testCreationRequete4()
+numComments=6

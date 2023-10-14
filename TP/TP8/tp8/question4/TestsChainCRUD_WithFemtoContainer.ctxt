@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=TestsChainCRUD_WithFemtoContainer
+comment1.params=
+comment1.target=void\ setUp()
+comment2.params=
+comment2.target=void\ testAvecInjection()
+comment3.params=
+comment3.target=void\ testAvecInjection2()
+comment4.params=
+comment4.target=void\ testAvecInjectionAvecLePatronCommande()
+numComments=5

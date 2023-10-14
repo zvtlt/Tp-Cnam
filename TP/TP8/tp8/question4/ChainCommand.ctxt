@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=ChainCommand
+comment1.params=chain
+comment1.target=void\ setChain(Handler)
+comment2.params=request
+comment2.target=void\ send(Requete)
+numComments=3

@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=BetweenMathSpecification
+comment1.params=left\ rigth
+comment1.target=BetweenMathSpecification(int,\ int)
+comment2.params=candidate
+comment2.target=boolean\ isSatisfiedBy(java.lang.Integer)
+numComments=3

@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=TestsCompositeCyclique
+comment1.params=
+comment1.target=void\ testAjouterAuGroupeUnContributeurEgal_null()
+comment2.params=
+comment2.target=void\ testCompositeCyclique()
+comment3.params=
+comment3.target=void\ testCompositeCyclique2()
+comment4.params=
+comment4.target=void\ testCompositeCyclique3()
+comment5.params=
+comment5.target=void\ testCompositeCyclique4()
+comment6.params=
+comment6.target=void\ testCompositeInvalideDeuxAppelsSetParent()
+numComments=7

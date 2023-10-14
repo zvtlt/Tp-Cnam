@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<programme>
+  <Sequence>
+    <Sequence>
+      <Affectation>
+        <Variable>som</Variable>
+        <Constante>0</Constante>
+      </Affectation>
+      <Pour>
+        <Affectation>
+          <Variable>i</Variable>
+          <Constante>0</Constante>
+        </Affectation>
+        <Inf>
+          <Variable>i</Variable>
+          <Variable>n</Variable>
+        </Inf>
+        <Affectation>
+          <Variable>som</Variable>
+          <Addition>
+            <Variable>som</Variable>
+            <Variable>i</Variable>
+          </Addition>
+        </Affectation>
+        <Affectation>
+          <Variable>i</Variable>
+          <Addition>
+            <Variable>i</Variable>
+            <Constante>1</Constante>
+          </Addition>
+        </Affectation>
+      </Pour>
+    </Sequence>
+    <Afficher>
+      <Variable>som</Variable>
+    </Afficher>
+  </Sequence>
+</programme>
+

@@ -1,0 +1,30 @@
+#BlueJ class context
+comment0.target=Requete
+comment1.params=url
+comment1.target=java.util.Properties\ analyserRequete(java.lang.String)
+comment1.text=\ M\u00E9thode\ utilitaire\ d'extraction\ des\ param\u00E8tres\ d'une\ requ\u00EAte\ GET/HTTP.\r\n\ Requ\u00EAte\ de\ la\ forme\ GET\ /commande/?nom\=string&valeur\=integer&...\r\n\ @param\ url\ une\ requ\u00EAte\ GET\ et\ ses\ param\u00E8tres\r\n\ @return\ une\ properties\ \:\ couples\ nom/valeur\r\n
+comment10.params=valeur
+comment10.target=void\ setValeur(int)
+comment11.params=
+comment11.target=java.util.Properties\ getProperties()
+comment12.params=properties
+comment12.target=void\ setProperties(java.util.Properties)
+comment13.params=
+comment13.target=java.lang.String\ toString()
+comment2.params=url
+comment2.target=Requete(java.lang.String)
+comment3.params=
+comment3.target=Requete()
+comment4.params=url
+comment4.target=void\ setUrl(java.lang.String)
+comment5.params=
+comment5.target=java.lang.String\ getCommande()
+comment6.params=commande
+comment6.target=void\ setCommande(java.lang.String)
+comment7.params=
+comment7.target=java.lang.String\ getNom()
+comment8.params=nom
+comment8.target=void\ setNom(java.lang.String)
+comment9.params=
+comment9.target=int\ getValeur()
+numComments=14

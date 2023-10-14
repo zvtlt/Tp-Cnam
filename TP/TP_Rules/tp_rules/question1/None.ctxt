@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=None
+comment1.params=
+comment1.target=None()
+comment2.params=e
+comment2.target=boolean\ isSatisfiedBy(java.lang.Object)
+comment3.params=
+comment3.target=java.lang.String\ toString()
+comment4.params=i
+comment4.target=void\ deepSpec(java.util.Iterator)
+comment4.text=\r\n\ Flatten\ all\ nested\ list\ into\ a\ single\ one\r\n\ add\ to\ the\ Instance\ list\r\n\ @param\ i\ an\ iterotor\ from\ a\ List\r\n
+numComments=5

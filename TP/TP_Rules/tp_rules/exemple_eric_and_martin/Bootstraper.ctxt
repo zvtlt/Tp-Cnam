@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Bootstraper
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment2.params=
+comment2.target=void\ initialize()
+comment3.params=
+comment3.target=void\ generateContainers()
+comment4.params=
+comment4.target=void\ generateCargos()
+comment5.params=
+comment5.target=void\ assignContainerForCargos()
+numComments=6

@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Handler
+comment1.params=next
+comment1.target=Handler(Handler)
+comment2.params=
+comment2.target=Handler\ getNext()
+comment3.params=next
+comment3.target=void\ setNext(Handler)
+comment4.params=t
+comment4.target=boolean\ handleRequest(java.lang.Object)
+comment5.params=
+comment5.target=java.lang.String\ toString()
+numComments=6

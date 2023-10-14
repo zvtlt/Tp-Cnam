@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Z_ParIntrospection2
+comment1.params=
+comment1.target=void\ test_lierCanvasEtActionListener()
+comment2.params=e
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment3.params=
+comment3.target=void\ test_delierJButtonEtNonMouseListener()
+comment4.params=
+comment4.target=void\ test_lierJButtonEtMouseListener()
+numComments=5

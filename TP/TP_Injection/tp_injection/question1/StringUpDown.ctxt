@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=StringUpDown
+comment1.params=str
+comment1.target=java.lang.String\ setToUpperCase(java.lang.String)
+comment2.params=str
+comment2.target=java.lang.String\ setToLowerCase(java.lang.String)
+comment3.params=
+comment3.target=java.lang.String\ toString()
+numComments=4

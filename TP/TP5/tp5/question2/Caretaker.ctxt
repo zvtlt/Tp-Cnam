@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Caretaker
+comment1.params=m
+comment1.target=void\ addMemento(Memento)
+comment2.params=
+comment2.target=int\ getSize()
+comment3.params=
+comment3.target=java.lang.Object\ getMemento()
+numComments=4

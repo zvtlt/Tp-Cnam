@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Client
+comment1.params=i
+comment1.target=void\ setMode(int)
+comment2.params=str
+comment2.target=java.lang.String\ setUoD(java.lang.String)
+comment3.params=
+comment3.target=java.lang.String\ toString()
+numComments=4

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<programme>
+  <Sequence>
+    <Affectation>
+      <Variable>xxx</Variable>
+      <Variable>n</Variable>
+    </Affectation>
+    <Sequence>
+      <Affectation>
+        <Variable>fact</Variable>
+        <Constante>1</Constante>
+      </Affectation>
+      <Sequence>
+        <TantQue>
+          <Non>
+            <Egal>
+              <Variable>xxx</Variable>
+              <Constante>0</Constante>
+            </Egal>
+          </Non>
+          <Sequence>
+            <Affectation>
+              <Variable>fact</Variable>
+              <Multiplication>
+                <Variable>fact</Variable>
+                <Variable>xxx</Variable>
+              </Multiplication>
+            </Affectation>
+            <Affectation>
+              <Variable>xxx</Variable>
+              <Soustraction>
+                <Variable>xxx</Variable>
+                <Constante>1</Constante>
+              </Soustraction>
+            </Affectation>
+          </Sequence>
+        </TantQue>
+        <Afficher>
+          <Variable>fact</Variable>
+        </Afficher>
+      </Sequence>
+    </Sequence>
+  </Sequence>
+</programme>
+

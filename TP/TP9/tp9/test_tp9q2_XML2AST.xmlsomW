@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<programme>
+  <Sequence>
+    <Sequence>
+      <Affectation>
+        <Variable>som</Variable>
+        <Constante>0</Constante>
+      </Affectation>
+      <TantQue>
+        <Sup>
+          <Variable>n</Variable>
+          <Constante>0</Constante>
+        </Sup>
+        <Sequence>
+          <Affectation>
+            <Variable>som</Variable>
+            <Addition>
+              <Variable>som</Variable>
+              <Variable>n</Variable>
+            </Addition>
+          </Affectation>
+          <Affectation>
+            <Variable>n</Variable>
+            <Soustraction>
+              <Variable>n</Variable>
+              <Constante>1</Constante>
+            </Soustraction>
+          </Affectation>
+        </Sequence>
+      </TantQue>
+    </Sequence>
+    <Afficher>
+      <Variable>som</Variable>
+    </Afficher>
+  </Sequence>
+</programme>
+

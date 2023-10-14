@@ -1,0 +1,86 @@
+M./Mme zanvit , en NFP121 au tp7q2, tentative du 08-12-21 à 17:36
+  Résultat : 6 échecs , aux 30 tests1 référents
+
+There were 6 failures: 
+1) test_delierJButtonEtNonMouseListener(question2): une NoSuchElementException est attendue 
+2) test_lierObservableNullEtNonObserver(question2): NoSuchElementException est attendu ??? (null) 
+3) test_lierObservableEtNonObserver(question2): NoSuchElementException est attendu ??? (argument type mismatch) 
+4) test_delierObservableEtObserver(question2): exception !!! question2.Z_ParIntrospection$Entier.deleteObservers(java.util.Observer) 
+5) test_lierObservableEtObserverNull(question2): NoSuchElementException est attendu ??? (null) 
+6) test_lierCanvasEtActionListener(question2): lier Canvas et ActionListener doit lever une exception ??? 
+
+(1/6)2 
+
+Pour le tp7q2*, à cet instant : 17 succès / 20 utilisateurs.
+* Soumissions au tp7q2 à effectuer avant le 2021-12-15, 23:59:59.
+JNEWS_Cnam, pour Java New Evaluation Web Services est un service d'aide au développement attendu.
+Vos travaux sont évalués par l'exécution de classes de tests référentes sur le serveur http://jfod.cnam.fr/jnews/, ces classes de tests utilisent ici junit, comme votre environnement de développement.
+Le nombre d'échecs aux tests référents représente le résultat de l'évaluation et un historique vous rappelle vos derniers résultats obtenus.
+Un historique détaillé est accessible depuis votre environnement, (menu submit/puis Browse et JNEWS_NFP121/historique)
+JNEWS_Cnam est bien entendu perfectible, n'hésitez pas à nous envoyer vos critiques, souhaits d'améliorations, mesures supplémentaires, etc...
+Bonnes réussites aux soumissions avec JNEWS !
+
+JNEWS_Cnam, Java New Evaluation Web Services du Cnam. 
+1 Un test JNEWS comporte plusieurs assertions, une assertion fausse induit un échec.
+2 Soit le (nombre d'essais effectué / nombre maximal de tentatives).
+
++++ notez qu'il est préférable de fermer cette fenêtre par la case [X] en haut à droite plutôt que d'utiliser le bouton Ok...+++
+
+
+
+
+
+--------------------------------------
+
+
+
+
+
+M./Mme zanvit , en NFP121 au tp7q2, tentative du 08-12-21 à 17:40
+  Résultat : 3 échecs , aux 30 tests1 référents
+
+There were 3 failures: 
+1) test_delierJButtonEtNonMouseListener(question2): une NoSuchElementException est attendue 
+2) test_delierObservableEtObserver(question2): exception !!! null 
+3) test_lierCanvasEtActionListener(question2): lier Canvas et ActionListener doit lever une exception ??? 
+
+(2/6)2 , l'historique3 de vos résultats4 6. 
+Pour le tp7q2*, à cet instant : 17 succès / 20 utilisateurs.
+* Soumissions au tp7q2 à effectuer avant le 2021-12-15, 23:59:59.
+JNEWS_cnam, Java New Evaluation Web Services. 
+1 Un test JNEWS comporte plusieurs assertions, une assertion fausse induit un échec.
+2 Soit le (nombre d'essais effectué / nombre maximal de tentatives).
+3 Un historique détaillé est accessible depuis BlueJ, (menu submit/Browse puis JNEWS_NFP121/historique) 
+4 Les résultats de tous les auditeurs sont accessibles depuis BlueJ, (menu submit/Browse puis JNEWS_NFP121/resultats_questionN)
++++ notez qu'il est préférable de fermer cette fenêtre par la case [X] en haut à droite plutôt que d'utiliser le bouton Ok...+++
+
+
+
+
+
+------------------------------------------------
+
+
+
+
+
+M./Mme zanvit , en NFP121 au tp7q2, tentative du 08-12-21 à 20:22
+  Résultat : 6 échecs , aux 30 tests1 référents
+
+There were 6 failures: 
+1) test_lierNonObservableEtNonObserver(question2): les parametres NonObservable et NonObserver ne peuvent être lies ! 
+2) test_delierJButtonEtNonMouseListener(question2): une NoSuchElementException est attendue 
+3) test_lierCanvasEtActionListener(question2): lier Canvas et ActionListener doit lever une exception ??? 
+4) test_lierObservableEtObserverNull(question2): le 2eme parametre n''est pas instanceof observer ! 
+5) test_lierNonObservableEtObserver(question2): le 1er parametre n''est pas instanceof Observable !!! 
+6) test_lierObservableEtNonObserver(question2): le 2eme parametre n''est pas instanceof Observer ! 
+
+(3/6)2 , l'historique3 de vos résultats4 3 6. 
+Pour le tp7q2*, à cet instant : 17 succès / 20 utilisateurs.
+* Soumissions au tp7q2 à effectuer avant le 2021-12-15, 23:59:59.
+JNEWS_cnam, Java New Evaluation Web Services. 
+1 Un test JNEWS comporte plusieurs assertions, une assertion fausse induit un échec.
+2 Soit le (nombre d'essais effectué / nombre maximal de tentatives).
+3 Un historique détaillé est accessible depuis BlueJ, (menu submit/Browse puis JNEWS_NFP121/historique) 
+4 Les résultats de tous les auditeurs sont accessibles depuis BlueJ, (menu submit/Browse puis JNEWS_NFP121/resultats_questionN)
++++ notez qu'il est préférable de fermer cette fenêtre par la case [X] en haut à droite plutôt que d'utiliser le bouton Ok...+++

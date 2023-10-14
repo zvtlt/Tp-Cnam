@@ -1,0 +1,22 @@
+M./Mme zanvit , en NFP121 au tp6q1, tentative du 21-11-21 à 00:32
+  Résultat : 1 échec , aux 17 tests1 référents
+
+There was 1 failure: 
+1) test_appel_de_new_Variable(question1): TestsACompleter: Trop peu de nouvelles variables ??? (il en faut au moins 4) 
+
+(1/6)2 
+
+Pour le tp6q1*, à cet instant : 22 succès / 25 utilisateurs.
+* Soumissions au tp6q1 à effectuer avant le 2021-11-24, 23:59:59.
+JNEWS_Cnam, pour Java New Evaluation Web Services est un service d'aide au développement attendu.
+Vos travaux sont évalués par l'exécution de classes de tests référentes sur le serveur http://jfod.cnam.fr/jnews/, ces classes de tests utilisent ici junit, comme votre environnement de développement.
+Le nombre d'échecs aux tests référents représente le résultat de l'évaluation et un historique vous rappelle vos derniers résultats obtenus.
+Un historique détaillé est accessible depuis votre environnement, (menu submit/puis Browse et JNEWS_NFP121/historique)
+JNEWS_Cnam est bien entendu perfectible, n'hésitez pas à nous envoyer vos critiques, souhaits d'améliorations, mesures supplémentaires, etc...
+Bonnes réussites aux soumissions avec JNEWS !
+
+JNEWS_Cnam, Java New Evaluation Web Services du Cnam. 
+1 Un test JNEWS comporte plusieurs assertions, une assertion fausse induit un échec.
+2 Soit le (nombre d'essais effectué / nombre maximal de tentatives).
+
++++ notez qu'il est préférable de fermer cette fenêtre par la case [X] en haut à droite plutôt que d'utiliser le bouton Ok...+++

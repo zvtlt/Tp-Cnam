@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=ParameterizedStorageSpecification
+comment1.params=maxTemp\ maxWeight
+comment1.target=ParameterizedStorageSpecification(int,\ int)
+comment2.params=
+comment2.target=ParameterizedStorageSpecification()
+comment3.params=container
+comment3.target=boolean\ isSatisfiedBy(Container)
+comment4.params=
+comment4.target=int\ getMaxWeight()
+comment4.text=GET\ Method\ Propertie\ maxWeight
+comment5.params=maxWeight
+comment5.target=void\ setMaxWeight(int)
+comment5.text=SET\ Method\ Propertie\ maxWeight
+comment6.params=
+comment6.target=int\ getMaxTemp()
+comment6.text=GET\ Method\ Propertie\ maxTemp
+comment7.params=maxTemp
+comment7.target=void\ setMaxTemp(int)
+comment7.text=SET\ Method\ Propertie\ maxTemp
+numComments=8

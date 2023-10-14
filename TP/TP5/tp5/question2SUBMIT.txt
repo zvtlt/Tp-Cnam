@@ -1,0 +1,22 @@
+M./Mme zanvit , en NFP121 au tp5q2, tentative du 15-11-21 à 22:39
+  Résultat : 2 échecs , aux 19 tests1 référents
+
+There were 2 failures: 
+1) test_IHMListe2_retirer_annuler(question2):
+après 2 retraits (un succès et un échec), annuler ne fonctionne pas ??? 
+
+2) test_IHMListe2_retirer_annulerBis(question2):
+retirer un élément absent engendre-t-il une sauvegarde, curieux ??? 
+
+
+(4/6)2 , l'historique3 de vos résultats4 2 2 2.
+
+à titre expérimental, vous avez accès aux sources des tests dits "référents"... signalez-nous toutes anomalies 
+Pour le tp5q2*, à cet instant : 18 succès / 30 utilisateurs.
+* Soumissions au tp5q2 à effectuer avant le 2021-11-17, 23:59:59.
+JNEWS_cnam, Java New Evaluation Web Services. 
+1 Un test JNEWS comporte plusieurs assertions, une assertion fausse induit un échec.
+2 Soit le (nombre d'essais effectué / nombre maximal de tentatives).
+3 Un historique détaillé est accessible depuis BlueJ, (menu submit/Browse puis JNEWS_NFP121/historique) 
+4 Les résultats de tous les auditeurs sont accessibles depuis BlueJ, (menu submit/Browse puis JNEWS_NFP121/resultats_questionN)
++++ notez qu'il est préférable de fermer cette fenêtre par la case [X] en haut à droite plutôt que d'utiliser le bouton Ok...+++onne pas ??? 

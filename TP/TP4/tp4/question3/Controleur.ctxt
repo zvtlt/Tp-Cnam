@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=Controleur
+comment0.text=\r\n\ D\u00E9crivez\ votre\ classe\ Controleur\ ici.\r\n\ \r\n\ @author\ (votre\ nom)\r\n\ @version\ (un\ num\u00E9ro\ de\ version\ ou\ une\ date)\r\n
+comment1.params=pile
+comment1.target=Controleur(PileModele)
+comment2.params=e
+comment2.target=void\ changedUpdate(javax.swing.event.DocumentEvent)
+comment3.params=e
+comment3.target=void\ removeUpdate(javax.swing.event.DocumentEvent)
+comment4.params=e
+comment4.target=void\ insertUpdate(javax.swing.event.DocumentEvent)
+comment5.params=
+comment5.target=void\ warn()
+comment6.params=
+comment6.target=void\ actualiserInterface()
+comment7.params=
+comment7.target=java.lang.Integer\ operande()
+numComments=8

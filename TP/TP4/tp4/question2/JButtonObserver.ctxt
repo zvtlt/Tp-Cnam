@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=JButtonObserver
+comment1.params=nom\ contenu
+comment1.target=JButtonObserver(java.lang.String,\ java.awt.TextArea)
+comment2.params=ae
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+numComments=3

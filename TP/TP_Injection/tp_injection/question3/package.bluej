@@ -1,0 +1,27 @@
+#BlueJ package file
+objectbench.height=92
+objectbench.width=432
+package.divider.horizontal=0.6002734731084777
+package.divider.vertical=0.7664576802507838
+package.editor.height=319
+package.editor.width=610
+package.editor.x=138
+package.editor.y=44
+package.frame.height=524
+package.frame.width=765
+package.numDependencies=0
+package.numTargets=1
+package.showExtends=true
+package.showUses=true
+readme.height=60
+readme.name=@README
+readme.width=48
+readme.x=10
+readme.y=10
+target1.height=50
+target1.name=ServiceLocatorTests
+target1.showInterface=false
+target1.type=UnitTestTarget
+target1.width=150
+target1.x=240
+target1.y=90

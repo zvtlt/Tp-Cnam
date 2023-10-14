@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=VisiteurRes
+comment1.params=save
+comment1.target=VisiteurRes(question1.GroupeDeContributeurs)
+comment2.params=c
+comment2.target=java.lang.Void\ visite(question1.Contributeur)
+comment3.params=g
+comment3.target=java.lang.Void\ visite(question1.GroupeDeContributeurs)
+numComments=4

@@ -1,0 +1,502 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+
+
+
+  
+  <link rel="stylesheet" type="text/css" href="css/style.css"><title></title></head><body>
+<div id="container">
+<div id="header">
+<div id="header_toprow"> Conservatoire national des arts et métiers </div>
+<div id="header_title"> NFP121 : Programmation avancée<br>
+TP n° 8 - Pattern Décorateur </div>
+</div>
+<div id="content">
+<div class="paragraphe"> Thèmes du TP :<br>
+<ul>
+  <li><a href="http://www.eli.sdsu.edu/courses/spring01/cs635/notes/decorator/decorator.html" target="_blank">Pattern Décorateur</a></li>
+  <li> <a target="_blank" href="http://jfod.cnam.fr/NFP121/Chapter03_Head_First.pdf">Le chapitre
+3</a> extrait de Head First Design Patterns O'Reilly<br>
+les <a href="https://github.com/bethrobson/Head-First-Design-Patterns">
+exemples</a> de ce livre : </li>
+  <li><a href="http://www.eli.sdsu.edu/courses/spring01/cs635/notes/decorator/decorator.html#Heading8">Pattern
+Chaîne de responsabilités</a></li>
+  <li><a href="http://www.eli.sdsu.edu/courses/spring01/cs635/notes/singleton/singleton.html">Pattern Singleton</a><br>
+  </li>
+
+  <li>Décorer une classe "InputStream"</li></ul>
+</div>
+<big><big style="color: rgb(153, 0, 0);"><big><span><span style="font-family: monospace; font-weight: bold;"><span class="paragraphe"><span class="question">Préambule<br>
+<br>
+1)&nbsp; </span></span></span></span></big></big></big><b><i><a href="https://bluej.org/faq.html#faq_How_do_I_use_custom_class_libraries__JARs__">import
+de la librairie</a> femtoContainer</i></b><b><i><span style="font-size: 9pt;"> </span></i></b><span style="font-size: 9pt;"><o:p></o:p></span>
+<ol start="1" type="1">
+  <li class="MsoNormal" style="">Téléchargez <a href="http://jfod.cnam.fr/progAvancee/femto_container_distrib_bluej.jar">femtoContainer.jar</a>&nbsp;<o:p></o:p></li>
+  <li class="MsoNormal">Ajouter cette archive à votre projet tp8, Menu <b><i>Outils</i></b>,
+item <b><i>Préférences</i></b>, onglet <b>Bibliothèques</b><br>
+<!--[if gte vml 1]><v:shapetype id="_x0000_t75" coordsize="21600,21600"
+      o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f"
+      stroked="f">
+      <v:stroke joinstyle="miter"/>
+      <v:formulas>
+       <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+       <v:f eqn="sum @0 1 0"/>
+       <v:f eqn="sum 0 0 @1"/>
+       <v:f eqn="prod @2 1 2"/>
+       <v:f eqn="prod @3 21600 pixelWidth"/>
+       <v:f eqn="prod @3 21600 pixelHeight"/>
+       <v:f eqn="sum @0 0 1"/>
+       <v:f eqn="prod @6 1 2"/>
+       <v:f eqn="prod @7 21600 pixelWidth"/>
+       <v:f eqn="sum @8 21600 0"/>
+       <v:f eqn="prod @7 21600 pixelHeight"/>
+       <v:f eqn="sum @10 21600 0"/>
+      </v:formulas>
+      <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+      <o:lock v:ext="edit" aspectratio="t"/>
+     </v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" alt=""
+      style='width:483.6pt;height:141.6pt'>
+      <v:imagedata src="file:///C:/Users/douin/AppData/Local/Temp/msohtmlclip1/01/clip_image001.png"
+       o:href="../tp_rules/images/preferences.png"/>
+     </v:shape><![endif]--><!--[if !vml]--><img style="border: 0px solid ; width: 645px; height: 189px;" alt="" src="./images/clip_image002.jpg" v:shapes="_x0000_i1025"><!--[endif]--><o:p></o:p></li>
+  <li class="MsoNormal">Redémarrez BlueJ<br>
+<!--[if gte vml 1]><v:shape id="_x0000_i1026" type="#_x0000_t75" alt=""
+      style='width:254.4pt;height:118.8pt'>
+      <v:imagedata src="file:///C:/Users/douin/AppData/Local/Temp/msohtmlclip1/01/clip_image003.png"
+       o:href="../tp_rules/images/preferences2.png"/>
+     </v:shape><![endif]--><!--[if !vml]--><img style="border: 0px solid ; width: 339px; height: 158px;" alt="" src="./images/clip_image004.jpg" v:shapes="_x0000_i1026"><!--[endif]--><o:p></o:p></li>
+  <li class="MsoNormal" style="">Vérifiez à nouveau Menu <b><i>Outils</i></b>,
+item <b><i>Préférences</i></b>, onglet <b>Bibliothèques</b>,
+l'archive doit être <b>chargée</b><br>
+<!--[if gte vml 1]><v:shape id="_x0000_i1027" type="#_x0000_t75" alt=""
+      style='width:435.6pt;height:129.6pt'>
+      <v:imagedata src="file:///C:/Users/douin/AppData/Local/Temp/msohtmlclip1/01/clip_image005.png"
+       o:href="../tp_rules/images/preferences3.png"/>
+     </v:shape><![endif]--><!--[if !vml]--><img style="border: 0px solid ; width: 581px; height: 173px;" alt="" src="./images/clip_image006.jpg" v:shapes="_x0000_i1027"><!--[endif]--><o:p></o:p></li>
+</ol>
+<br>
+<big>
+<big style="color: rgb(153, 0, 0);"><big><span><span style="font-family: monospace; font-weight: bold;"><span class="paragraphe"><span class="question">2) </span></span></span></span></big></big></big><big>Exécutez
+la classe de tests unitaires, incluse dans le paquetage <span style="font-weight: bold;">decorateurHtmlVuEnCours, </span>celle-ci
+utilise l'outil <span style="font-weight: bold;">femtoContainer</span>
+pour la configuration du décorateur HTML. <br>
+<br>
+</big>
+<div style="margin-left: 160px;"><big><img style="width: 349px; height: 147px;" alt="" src="images/Screen-2020-10-26_15-09-43.jpg"></big><br>
+<big>
+</big></div>
+<div style="margin-left: 40px;">
+<ul>
+  <li><big>1) Vérifiez que cette classe de tests s'exécute sur votre
+poste sans échec. <br>
+    </big></li>
+  <li><big>2) Puis ouvrez le document en haut à gauche (i.e. le fichier
+README.TXT), <br>
+    </big></li>
+  <ul>
+    <li><big>supprimez le commentaire pour le mode verbeux, soit<br>
+      </big></li>
+  </ul>
+  <ul>
+    <ul>
+      <li><big>verbose=true&nbsp; au lieu de #verbose=true, relancez
+l'exécution</big></li>
+    </ul>
+  </ul>
+  <li><big>Signalez sur le forum, dès que possible toute anomalie de fonctionnement de ce fabuleux outil.<br>
+    </big></li>
+</ul>
+</div>
+<big>
+<big style="color: rgb(153, 0, 0);"><big><span><span style="font-family: monospace; font-weight: bold;"><span class="paragraphe"><span class="question">3) </span></span></span></span></big></big></big><big>Idem
+</big><small style="font-family: monospace;"><small><small><small><small><small><small><small><small><small><small><small><small><small><span><span style="font-weight: bold;"><span class="paragraphe"><span class="question">(2)</span></span></span></span></small></small></small></small></small></small></small></small></small></small></small></small></small></small><big><small><small><small><small><small>
+, </small></small></small></small></small>Exécutez la classe de tests
+unitaires, incluse dans le paquetage <span style="font-weight: bold;">chaineDeResponsabilitesHtmlVuEnCours</span><br>
+</big>
+<ul>
+  <li><big>1) Vérifiez que cette classe de tests s'exécute sur votre
+poste sans échec. <br>
+    </big></li>
+  <li><big>2) Puis ouvrez le document en haut à gauche (i.e. le fichier
+README.TXT), <br>
+    </big></li>
+  <ul>
+    <li><big>supprimez le commentaire pour le mode verbeux, soit<br>
+      </big></li>
+  </ul>
+  <ul>
+    <ul>
+      <li><big>verbose=true&nbsp; au lieu de #verbose=true, relancez
+l'exécution</big></li>
+    </ul>
+  </ul>
+  
+</ul>
+<br>
+<hr>
+<div class="question"> <img src="images/question1.png" height="80" width="101"> <span>Une IHM à compléter : une PIZZA cela se décore !!!</span>
+</div>
+<div class="paragraphe"> Utilisation du pattern Décorateur pour
+l'élaboration d'une pizza : Les pizzas, 3 sortes (Classic, PizzaSolo ou
+GenerousCrust) sont ici "décorées" par des ingrédients avant d'être
+confectionnées (MAKING Pizza) et le prix dépend bien sur de cette
+composition. On "résume" cela par l'architecture suivante : </div>
+<p align="center"> <img class="win_screenshot" src="images/bluej1.png" height="481" width="850"> </p>
+<div class="paragraphe"> Alors, la création d'une pizza à pâte
+"Classic" avec deux doses de Jambon ("Ham") et avec des champignons
+("Mushrooms") sera "confectionnée" en Java par : </div>
+<div class="codesource"> <code> <font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#000000">Pizza&nbsp;pizza&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Mushrooms</font><font color="#000000">(</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Ham</font><font color="#000000">(</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Ham</font><font color="#000000">(&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Classic</font><font color="#000000">()))</font><font color="#000000">;</font> </code> </div>
+<div class="paragraphe"> <b>Complétez</b> L'IHM "PizzaStore" qui
+permet :<br>
+<ul>
+  <li>d'élaborer une pizza à la demande, et</li>
+  <li>de calculer son prix "en temps réel" au fur et à mesure des
+désirs de l'acheteur</li>
+</ul>
+<b>Remarque :</b> ce qui est dit est dit, on ne peut pas revenir en
+arrière dans la commande... </div>
+<p align="left"> <font size="3"><b><br>
+</b></font></p>
+<p align="left"><font size="3"><b>Interface au comportement attendu,
+depuis votre répertoire tp8&gt;java -jar ihm.jar</b></font></p>
+&nbsp;
+<hr>
+<div class="question"> <img src="images/question2_1.png" height="80" width="111"> <span>Complétez cette architecture</span> </div>
+<div class="paragraphe"> L'exemple présenté dans le <a href="http://jfod.cnam.fr/NFP121/Chapter03_Head_First.pdf" target="_blank">chapitre 3</a> extrait de Head First Design Patterns,
+décrit une boisson et
+des compléments possibles. Le pattern décorateur est utilisé afin, de
+"décorer" la boisson choisie avec les souhaits d'un client d'une part,
+et de fournir au client le prix exact de la boisson qu'il a commandée
+d'autre part.<br>
+<br>
+Exemple : un café corsé avec du lait, s'écrit:<br>
+</div>
+<div class="codesource"> <code> <font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#000000">Beverage&nbsp;darkRoastWithMilk&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Milk</font><font color="#000000">(</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">DarkRoast</font><font color="#000000">())</font><font color="#000000">;</font> </code> </div>
+<div class="paragraphe"> et l'obtention de son prix :<br>
+</div>
+<div class="codesource"> <code> <font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>double&nbsp;</b></font><font color="#000000">price&nbsp;=&nbsp;darkRoastWithMilk.cost</font><font color="#000000">()</font><font color="#000000">;&nbsp;</font> </code>
+</div>
+<p align="center"> <img class="win_screenshot" src="images/bluej2.png" height="475" width="686"> </p>
+<div class="paragraphe"> Les différentes boissons héritent de la classe
+abstraite <b>Beverage</b>,<br>
+La classe abstraite <b>CondimentDecorator</b>, instance du pattern
+Décorateur, représente les exigences possibles du client...<br>
+<br>
+On demande de compléter cette architecture en ajoutant le chocolat
+(classe <b>Chocolate</b>) comme boisson, le coût de cette boisson est
+de <b>2.10</b> et de compléter toutes les méthodes de la classe de
+test ChocolateTest, les méthodes correspondent aux boissons suivantes:
+<ul>
+  <li>un chocolat seul</li>
+  <li>un chocolat avec de la crème(Whip)</li>
+  <li>un chocolat avec deux rations de crème</li>
+  <li>un chocolat avec de la crème, du soja(soy) et du moka(mocha),...
+( les goûts ne se discutent pas ...)</li>
+  <li>un café décaféiné avec du lait</li>
+</ul>
+</div>
+<p align="center"> <img class="win_screenshot" src="images/bluej3.png" height="347" width="406">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img class="win_screenshot" src="images/bluej4.png" height="375" width="378"> </p>
+<hr>
+<div class="question"> <img src="images/question2_2.png" height="80" width="111"> <span>Le condiment sucre de betteraves (classe BeetSugar)</span>
+</div>
+<div class="paragraphe"> <b>Ajouter</b> le condiment sucre de
+betteraves, (classe <b>BeetSugar</b>), dont le coût est de 0.1, sa
+description : "<b>Beet Sugar</b>". <br>
+<br>
+&nbsp;<big><span style="font-weight: bold;">Attention à l'espace entre
+Beet et Sugar.<br>
+<br>
+</span></big></div>
+<br>
+<hr>
+<div class="question"> <img src="images/question2_3.png" height="80" width="111"> <span>La méthode toString()</span> </div>
+<div class="paragraphe"> <b>Ajouter</b> la méthode <b>public String
+toString();</b> qui se contente de retourner <b>la description et le
+coût</b> du produit choisi par le client, selon ce format <i>description
+$cost</i><br>
+<br>
+un exemple : une trace de la description attendue<br>
+<div class="codesource"> <code> <font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#000000">Beverage&nbsp;b&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">BeetSugar</font><font color="#000000">(</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Whip</font><font color="#000000">(</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Mocha</font><font color="#000000">(</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Soy</font><font color="#000000">(</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">HouseBlend</font><font color="#000000">()))))</font><font color="#000000">;</font> <br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#000000">System.out.println</font><font color="#000000">(</font><font color="#000000">b</font><font color="#000000">)</font><font color="#000000">;</font> </code> </div>
+<p align="center">Trace attendue<br>
+<img class="win_screenshot" src="images/bluej5.png" height="175" width="578"> </p>
+</div>
+<br>
+<hr>
+<div class="question">&nbsp; <img style="width: 101px; height: 80px;" alt="" src="images/question3.png"><span>I/O JAVA et pattern décorateur</span>
+</div>
+<p align="center"> <img class="win_screenshot" src="images/bluej6.png" height="371" width="693"> </p>
+<div class="paragraphe"><img style="width: 111px; height: 80px;" alt="" src="images/question3_1.png"> Ci-dessus le décorateur (incomplet) des
+entrées-sorties en Java, package java.io + la classe <b>UpperCaseInputStream</b>
+à développer<br>
+<br>
+Proposez la classe <b>UpperCaseInputStream</b> (en grisé ci dessus),
+un des décorateurs possibles de <b>FilterInputStream</b>, qui
+transforme en <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Character.html#toUpperCase%28int%29" target="_blank">Majuscule</a> tous les caractères du fichier transmis
+en paramètre. </div>
+<div class="codesource"> <code> <font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">testUpperCase_README_TXT</font><font color="#000000">()&nbsp;</font><font color="#7f0055"><b>throws&nbsp;</b></font><font color="#000000">Exception&nbsp;</font><font color="#000000">{</font> <br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">InputStream&nbsp;is&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">BufferedInputStream</font><font color="#000000">(</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">FileInputStream</font><font color="#000000">(</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">File</font><font color="#000000">(</font><font color="#2a00ff">"README.TXT"</font><font color="#000000">)))</font><font color="#000000">;&nbsp;</font><font color="#3f7f5f">//&nbsp;déclaration&nbsp;à&nbsp;décorer</font> <br>
+<br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">c&nbsp;=&nbsp;is.read</font><font color="#000000">()</font><font color="#000000">;</font> <br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>while&nbsp;</b></font><font color="#000000">(</font><font color="#000000">c&nbsp;!=&nbsp;-</font><font color="#990000">1</font><font color="#000000">)&nbsp;{</font> <br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">assertTrue</font><font color="#000000">(</font><font color="#2a00ff">"erreur&nbsp;!,&nbsp;'"&nbsp;</font><font color="#000000">+&nbsp;Character.valueOf</font><font color="#000000">((</font><font color="#7f0055"><b>char</b></font><font color="#000000">)&nbsp;</font><font color="#000000">c</font><font color="#000000">)&nbsp;</font><font color="#000000">+&nbsp;</font><font color="#2a00ff">"'&nbsp;ne&nbsp;semble&nbsp;pas&nbsp;être&nbsp;une&nbsp;majuscule&nbsp;..."</font><font color="#000000">,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Character.isUpperCase</font><font color="#000000">((</font><font color="#7f0055"><b>char</b></font><font color="#000000">)&nbsp;</font><font color="#000000">c</font><font color="#000000">)&nbsp;</font><font color="#000000">||&nbsp;</font><font color="#000000">(</font><font color="#7f0055"><b>char</b></font><font color="#000000">)&nbsp;</font><font color="#000000">c&nbsp;==&nbsp;</font><font color="#990000">'&nbsp;'</font><font color="#000000">)</font><font color="#000000">;</font> <br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">c&nbsp;=&nbsp;is.read</font><font color="#000000">()</font><font color="#000000">;</font> <br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font> <br>
+<br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">is.close</font><font color="#000000">()</font><font color="#000000">;</font> <br>
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font>
+</code> </div>
+<hr>
+<div class="question"> <img style="width: 112px; height: 80px;" alt="" src="images/question3_2.png"> <span>La classe PushbackInputStream</span> </div>
+<div class="paragraphe"> Créez une instance de la classe
+UpperCaseInputStream enrichie des fonctionnalités offertes par la
+classe <a href="http://docs.oracle.com/javase/7/docs/api/java/io/PushbackInputStream.html" target="_blank">PushbackInputStream</a><br>
+<br>
+Vérifiez en proposant un test supplémentaire de la de test
+UpperCaseInputStreamTest, le bon fonctionnement de cette instance ainsi
+décorée....<br>
+<br>
+</div>
+</div><br>
+
+<hr>
+<div class="question"> <img style="width: 101px; height: 80px;" alt="" src="images/question4.png"> La chaîne de responsabilités (CRUD)<br>
+ </div>
+
+<div class="paragraphe">
+<p class="paragraphe">&nbsp;&nbsp;&nbsp; <br>
+<br>
+&nbsp;&nbsp;&nbsp; <img style="width: 111px; height: 80px;" alt="" src="images/question4_1.png">Proposez une implémentation de classe Table, en garantissant une et une seul instance de cette classe, i.e. usage du <a href="http://www.eli.sdsu.edu/courses/spring01/cs635/notes/singleton/singleton.html">patron Singleton</a>.</p>
+<p style="margin-left: 40px;" class="paragraphe">Les opérations sur cette unique instance de la classe Table sont</p>
+<p style="margin-left: 40px;" class="paragraphe"><img style="width: 907px; height: 483px;" src="./images/moz-screenshot_q4_1.jpg" alt=""></p>
+
+<p class="paragraphe">&nbsp; <span style="font-weight: bold;">Attention</span> la méthode remove de l'itérateur, obtenu par l'appel de la méthode iterator est sans effet  <br>
+</p>
+<p class="paragraphe"><br>
+</p>
+
+&nbsp;&nbsp;&nbsp; <img style="width: 111px; height: 80px;" alt="" src="images/question4_2.png">Proposez
+une chaîne de responsabilités permettant le traitement de requêtes
+apparentées HTTP méthode GET. Ces requêtes reflètent&nbsp; les
+opérations élémentaires de persistance d'une donnée cf. <span style="font-weight: bold;">CRUD</span>, Create,
+Retrieve, Update, Delete <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">wikipedia</a> <br>
+<br>
+<ul><li><big><span style="font-weight: bold;">(C) </span></big>la création de couples nom/valeur, son ajout dans le singleton Table<br>
+  </li>
+  <li><big><span style="font-weight: bold;">(R) </span></big>la recherche d'une valeur à partir du nom, la lecture dans la table,<br>
+  </li>
+  <li><big><span style="font-weight: bold;">(U)</span></big> la mise à jour d'un couple nom/valeur, <br>
+  </li>
+  <li><big><span style="font-weight: bold;">(D) </span></big>le retrait d'un couple nom/valeur.</li>
+</ul><br>
+
+<div style="margin-left: 80px;">&nbsp;<img style="width: 831px; height: 364px;" src="./images/moz-screenshot_q4_2.jpg" alt=""><br>
+</div>
+<br>
+<div style="margin-left: 40px;"><br>
+
+<div style="margin-left: 40px;"><span style="font-weight: bold;">Les classes Requete, Handler et Log sont complètes.</span><br>
+</div>
+<br>
+Le <span style="font-style: italic;">Handler</span> Log se contente d'effectuer un affichage de la requête avec une estampille (appel de System.out.println)<br>
+Create, Retrieve, Update et Delete correspondent aux opérations décrites ci-dessus<br>
+Exemples de Requête<br>
+<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">requete = new Requete("GET
+/create/?nom=temperature&amp;valeur=20");&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // C&nbsp; /create/</span><br>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">requete
+= new Requete("GET
+/retrieve/?nom=temperature");&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+// R&nbsp; /retrieve/</span><br style="font-weight: bold;"><span style="font-weight: bold;">
+&nbsp;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">requete = new Requete("GET
+/update/?nom=temperature&amp;valeur=40");&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // U&nbsp; /update/</span><br>
+ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">requete
+= new Requete("GET
+/delete/?nom=temperature");&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+// D&nbsp; /delete/</span><br>
+<br><span style="font-weight: bold; color: rgb(204, 0, 0);">Lisez attentivement la classe de tests unitaires fournie</span><br>
+&nbsp;<br>
+</div>
+<br>
+<p class="paragraphe"><br>
+</p>
+
+
+&nbsp;&nbsp;&nbsp; <img style="width: 111px; height: 80px;" alt="" src="./images/question4_3.png">Proposez
+un Handler de Débogage (Debug), celui-ci permet d'obtenir en retour
+dans la requête émise la liste de tous les couples Clef/Valeur présents
+dans la Table Singleton.<br>
+<br>
+<div style="margin-left: 40px;">&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; requete = new Requete("GET
+/debug/");&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+// Debug&nbsp; /debug/<br>
+<br><span style="color: rgb(153, 0, 0);">
+&nbsp;
+</span><span style="font-weight: bold; color: rgb(153, 0, 0);">Lisez attentivement la classe de tests unitaires fournie</span><br>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+&nbsp;&nbsp;  <img style="width: 111px; height: 80px;" alt="" src="images/question4_4.png">Utilisez le formidable outil d'injection de dépendances de l'unité NFP121 :<span style="font-weight: bold;"> femtoContainer, </span>en
+ajoutant un maillon Debug n'importe où dans la chaîne de
+responsabilités... la classe de tests unitaires doit s'exécuter sans
+erreur.<span style="font-weight: bold;"><br>
+<br>
+&nbsp; <br>
+Un extrait de la classe de tests unitaires<br>
+</span>
+<pre>  <big>  <span style="font-weight: bold;"></span></big><big><span style="font-weight: bold;"></span></big><br><big>   public void <span style="font-weight: bold;">testAvecInjection</span>() throws Exception{<br>        assertEquals(0, Table.getInstance().taille());<br>        ApplicationContext ctx = Factory.createApplicationContext("./question4/README.TXT");<br>        System.out.println("test avec injection: ");<br>        Requete requeteCreate = ctx.getBean("requete_create");<br>        Handler&lt;Requete&gt; chaineCRUD = ctx.getBean("log_bean");<br>        <br>        assertEquals("Log-&gt;Create-&gt;Retrieve-&gt;Update-&gt;Delete", chaineCRUD.toString());<br>        chaineCRUD.handleRequest(requeteCreate);<br>        assertTrue(Table.getInstance().contient("temperature"));<br>        assertEquals(200,Table.getInstance().lire("temperature"));<br><br>        Requete requeteUpdate = ctx.getBean("requete_update");<br>        chaineCRUD.handleRequest(requeteUpdate);<br>        assertEquals(40,Table.getInstance().lire("temperature"));<br><br style="font-weight: bold;"></big></pre>
+<big><span style="font-weight: bold;">Avec le fichier README.TXT (icône en haut à gauche)</span></big><br style="font-weight: bold;">
+<div style="margin-left: 40px;"><br>
+bean.id.1=requete_create<br>
+requete_create.class=question4.Requete<br>
+#requete_create.property.1=url<br>
+#requete_create.property.1.param.1=GET /create/?nom=temperature&amp;valeur=200<br>
+# ou bien à l'aide des mutateurs<br>
+requete_create.property.1=nom<br>
+requete_create.property.1.param.1=temperature<br>
+requete_create.property.2=valeur<br>
+requete_create.property.2.param.1=200<br>
+requete_create.property.3=commande<br>
+requete_create.property.3.param.1=create<br>
+<br>
+bean.id.2=requete_retrieve<br>
+requete_retrieve.class=question4.Requete<br>
+requete_retrieve.property.1=url<br>
+requete_retrieve.property.1.param.1=GET /retrieve/?nom=temperature<br>
+<br>
+bean.id.3=requete_update<br>
+requete_update.class=question4.Requete<br>
+requete_update.property.1=url<br>
+requete_update.property.1.param.1=GET /update/?nom=temperature&amp;valeur=40<br>
+<br>
+bean.id.4=requete_delete<br>
+requete_delete.class=question4.Requete<br>
+requete_delete.property.1=url<br>
+requete_delete.property.1.param.1=GET /delete/?nom=temperature<br>
+<br>
+bean.id.5=log_bean<br>
+log_bean.class=question4.Log<br>
+log_bean.property.1=next<br>
+log_bean.property.1.param.1=create_bean<br>
+<br>
+bean.id.6=create_bean<br>
+create_bean.class=question4.Create<br>
+create_bean.property.1=next<br>
+create_bean.property.1.param.1=retrieve_bean<br>
+<br>
+bean.id.7=retrieve_bean<br>
+retrieve_bean.class=question4.Retrieve<br>
+retrieve_bean.property.1=next<br>
+retrieve_bean.property.1.param.1=update_bean<br>
+<br>
+bean.id.8=update_bean<br>
+update_bean.class=question4.Update<br>
+update_bean.property.1=next<br>
+update_bean.property.1.param.1=delete_bean<br>
+<br>
+bean.id.9=delete_bean<br>
+delete_bean.class=question4.Delete<br>
+delete_bean.property.1=next<br>
+delete_bean.property.1.param.1=null<br>
+<br>
+<br>
+</div>
+
+&nbsp;
+<br>
+
+<br>
+
+&nbsp;&nbsp;  <img style="width: 111px; height: 80px;" alt="" src="images/question4_5.png"><big><span style="font-weight: bold;">Ajout du patron Commande</span></big><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  La ligne ci dessous issue de la question ci-dessus, rend le source Java <span style="font-weight: bold;">dépendant</span>
+du nom du premier maillon de la chaîne de responsabilités, (log_bean),
+à chaque modification du maillon de tête, nous devons modifier le
+source Java ...<br>
+<div style="margin-left: 40px;">
+<pre style="font-weight: bold;"><big><big>Handler&lt;Requete&gt; chaineCRUD = ctx.getBean("log_bean");</big></big></pre>
+
+</div>
+<div style="margin-left: 40px;">Afin de nous abstraire de toute modification, nous pourrions utiliser le <span style="font-weight: bold;">patron Commande <br>
+<br>
+En lieu et place nous aurons <br>
+<br>
+</span><big><big>Invoker&lt;Requete&gt; invoker = ctx.getBean("invoker_bean");<br>
+<br>
+</big></big>Selon le patron Commande la classe Invoker contient une
+commande, et ce sera cette commande qui effectuera l'envoi sur la
+chaine de responsabilités, seul le fichier de configuration sera à
+modifier si nous changeons le premier maillon de la chaîne.<br>
+<span style="font-weight: bold;"><br>
+<br>
+Ajoutez</span> l'usage du patron Commande afin de supprimer cette
+dépendance dans le source Java comme le suggère cet extrait de la
+classe de tests unitaires<br>
+<br>
+Maintenant il suffit de changer la configuration et uniquement afin de
+changer une ou des compsantes de la chaîne de responsabilités<br>
+<br>
+<br>
+<br>
+&nbsp;&nbsp; public void testAvecInjection() throws Exception{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; try{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; assertEquals(0, Table.getInstance().taille());<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ApplicationContext ctx =
+Factory.createApplicationContext("./question4/README.TXT");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.out.println("tests avec injection: ");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<big><span style="font-weight: bold;"> Invoker&lt;Requete&gt; invoker = ctx.getBean("invoker_bean");</span></big><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; invoker.execute(ctx.getBean("requete_create"));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; assertTrue(Table.getInstance().contient("temperature"));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; assertEquals(200,Table.getInstance().lire("temperature"));<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; invoker.execute(ctx.getBean("requete_update"));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; assertEquals(40,Table.getInstance().lire("temperature"));<br>
+<br>
+<span style="font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+// changez la chaine de responsabilités depuis le fichier de
+configuration</span><br style="font-weight: bold;">
+<span style="font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+// vérifiez le bon usage du Patron Commande via femtoContainer</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }catch(Exception e){<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e.printStackTrace();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+<br>
+<br>
+bean.id.11=invoker_bean<br>
+invoker_bean.class=question4.Invoker<br>
+invoker_bean.property.1=command<br>
+invoker_bean.property.1.param.1=command_bean<br>
+<br>
+bean.id.12=command_bean<br>
+command_bean.class=question4.ChainCommand<br>
+command_bean.property.1=chain<br>
+command_bean.property.1.param.1=log_bean&nbsp; // il suffit ici de changer le nom du bean<br>
+</div>
+<pre style="font-weight: bold;"><big><br></big></pre>
+
+<br>
+<span style="font-weight: bold;">
+<br>
+</span></div>
+
+<p class="paragraphe">&nbsp;</p>
+
+
+<div id="footer"> <br>
+<a class="lien" href="http://jfod.cnam.fr/" target="_blank">JF</a><a class="lien" href="http://jfod.cnam.fr/" target="_blank">OD</a> | <a class="lien" href="http://deptmedia.cnam.fr/phpBB3/viewforum.php?f=40" target="_blank">FORUM</a> | <a class="lien" href="http://www.cnam.fr/" target="_blank">CNAM</a> </div>
+</div>
+
+</body></html>

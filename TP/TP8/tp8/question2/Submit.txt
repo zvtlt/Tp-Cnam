@@ -1,0 +1,25 @@
+M./Mme zanvit , en NFP121 au tp8q2, tentative du 21-12-21 à 15:03
+  Résultat : 0 échec , aux 10 tests1 référents
+
+Mais 3 erreurs (exceptions pour junit) subsistent, vérifiez à nouveau votre réponse, si ces erreurs persistent, envoyez-nous le source incriminé, merci ...
+
+1) testChocolateWhipSoyMochaBeetSugar(question2)java.lang.InstantiationError: question2.BeetSugar 
+2) test_BeetSugar_Mocha_Soy_Whip_Chocolate_toString(question2)java.lang.InstantiationError: question2.BeetSugar 
+3) test_BeetSugar_Whip_Mocha_Soy_HouseBlend_toString(question2)java.lang.InstantiationError: question2.BeetSugar 
+
+(1/6)2 
+
+Pour le tp8q2*, à cet instant : 16 succès / 18 utilisateurs.
+* Soumissions au tp8q2 à effectuer avant le 2021-12-29, 23:59:59.
+JNEWS_Cnam, pour Java New Evaluation Web Services est un service d'aide au développement attendu.
+Vos travaux sont évalués par l'exécution de classes de tests référentes sur le serveur http://jfod.cnam.fr/jnews/, ces classes de tests utilisent ici junit, comme votre environnement de développement.
+Le nombre d'échecs aux tests référents représente le résultat de l'évaluation et un historique vous rappelle vos derniers résultats obtenus.
+Un historique détaillé est accessible depuis votre environnement, (menu submit/puis Browse et JNEWS_NFP121/historique)
+JNEWS_Cnam est bien entendu perfectible, n'hésitez pas à nous envoyer vos critiques, souhaits d'améliorations, mesures supplémentaires, etc...
+Bonnes réussites aux soumissions avec JNEWS !
+
+JNEWS_Cnam, Java New Evaluation Web Services du Cnam. 
+1 Un test JNEWS comporte plusieurs assertions, une assertion fausse induit un échec.
+2 Soit le (nombre d'essais effectué / nombre maximal de tentatives).
+
++++ notez qu'il est préférable de fermer cette fenêtre par la case [X] en haut à droite plutôt que d'utiliser le bouton Ok...+++
